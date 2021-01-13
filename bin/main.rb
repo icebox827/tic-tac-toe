@@ -23,6 +23,7 @@ def greetings(tokens)
   puts "Now #{player1} and #{player2} let's begin"
 end
 
+# Create the board
 def board_display(board)
   puts 'Current board: '
   puts " #{board[0]} | #{board[1]} | #{board[2]} "
@@ -32,5 +33,13 @@ def board_display(board)
   puts " #{board[6]} | #{board[7]} | #{board[8]} "
 end
 
+# Ask user to player
+def player_move(board, tokens)
+
+end
+
+
+
+# Call the methods
 greetings(tokens)
 board_display(board)
