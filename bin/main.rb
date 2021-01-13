@@ -49,3 +49,4 @@ end
 # Call the methods
 greetings(tokens)
 board_display(board)
+player_move(board)
