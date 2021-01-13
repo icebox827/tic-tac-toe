@@ -36,9 +36,14 @@ def board_display(board)
 end
 
 # Ask user to player
-def player_move(_board)
+def player_move(board)
   puts 'Choose a number between 1 and 9'
   move = gets.chomp.to_i
+  while move < board.size
+    move > 9 ? (puts 'Wrong move') : (puts 'Your turn next player')
+    move = gets.chomp.to_i
+  end
+  puts 'Game over'
 end
 
 # Call the methods
