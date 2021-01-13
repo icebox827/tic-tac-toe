@@ -1,2 +1,4 @@
 #!/usr/bin/env ruby
-puts 'Hello world!'
+tokens = %w[X O]
+
+
