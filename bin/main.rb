@@ -41,6 +41,7 @@ def player_move(board)
   move = gets.chomp.to_i
   while move < board.size
     move > 9 ? (puts 'Wrong move') : (puts 'Your turn next player')
+    puts "player put the token at #{move}"
     move = gets.chomp.to_i
   end
   puts 'Game over'
