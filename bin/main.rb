@@ -23,4 +23,7 @@ def greetings(tokens)
   puts "Now #{player1} and #{player2} let's begin"
 end
 
-launch = greetings(tokens)
+def board_display(board)
+
+end
+greetings(tokens)
