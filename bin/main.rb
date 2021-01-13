@@ -17,8 +17,10 @@ def greetings(tokens)
   player1_token = gets.chomp
   if player1_token == tokens[0]
     (puts "#{player1} will use #{tokens[0]} and #{player2} will use #{tokens[1]}")
-  else
+  elsif player1_token == tokens[1]
     (puts "#{player1} will use #{tokens[1]} and #{player2} will use #{tokens[0]}")
+  else
+    puts 'Invalid token'
   end
   puts "Now #{player1} and #{player2} let's begin"
 end
@@ -34,11 +36,10 @@ def board_display(board)
 end
 
 # Ask user to player
-def player_move(board, tokens)
-
+def player_move(_board)
+  puts 'Choose a number between 1 and 9'
+  move = gets.chomp.to_i
 end
-
-
 
 # Call the methods
 greetings(tokens)
