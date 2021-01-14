@@ -58,10 +58,6 @@ def player_move(board)
   end
 end
 
-def valid_move?(board, player_move)
-  board.include?(player_move)
-end
-
 # Call the methods
 greetings(tokens)
 board_display(board)
