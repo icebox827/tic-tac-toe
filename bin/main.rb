@@ -1,8 +1,11 @@
 #!/usr/bin/env ruby
+
+# rubocop:disable Style/GlobalVars
+
 # Create the token and the board
 tokens = %w[X O]
 board = [1, 2, 3, 4, 5, 6, 7, 8, 9]
-#ask player to enter their name
+# Ask player to enter their name
 puts 'Please enter your name player 1'
 $player1 = gets.chomp
 puts "welcome #{$player1}"
@@ -58,3 +61,5 @@ end
 greetings(tokens)
 board_display(board)
 player_move(board)
+
+# rubocop:enable Style/GlobalVars
