@@ -26,7 +26,13 @@ def user_tokens(tokens)
   end
 end
 
-# Invite users to enter their name and welcome them
+# Welcome the players
+def greetings
+  puts 'Welcome to the Tiac tac toe game'
+  puts "#{$player1} and #{$player2} let's begin"
+end
+
+
 def greetings(tokens)
   puts 'Welcome to the Tic Tac Toe game'
   puts 'Please enter your name player 1'
@@ -48,7 +54,7 @@ def greetings(tokens)
   puts "Now #{player1} and #{player2} let's begin"
 end
 
-# Create the board
+# Create the board and display it
 def board_display(board)
   puts 'Current board: '
   puts " #{board[0]} | #{board[1]} | #{board[2]} "
