@@ -43,8 +43,11 @@ def board_display(board)
 end
 
 # Ask user to player
-def player_move(_board)
+def player_move
   puts 'Choose a number between 1 and 9...'
+  puts "Your turn #{$player1}"
+  move = gets.chomp.to_i
+  puts "Your turn #{$player2}"
   move = gets.chomp.to_i
   if move > 9
     puts 'You chose an invalid number, please choose again ...'
@@ -54,9 +57,13 @@ def player_move(_board)
   end
 end
 
+def valid_move?(board, player_move)
+  board.include?(player_move)
+end
+
 # Call the methods
 greetings(tokens)
 board_display(board)
-player_move(board)
+player_move
 
 # rubocop:enable Style/GlobalVars
