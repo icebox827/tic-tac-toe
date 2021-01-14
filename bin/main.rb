@@ -54,7 +54,6 @@ def player_move(board)
     counter += 1
     if move > 9
       puts 'You chose an invalid number, please choose again ...'
-      player_move
     else
       move
     end
