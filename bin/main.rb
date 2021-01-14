@@ -8,10 +8,10 @@ board = [1, 2, 3, 4, 5, 6, 7, 8, 9]
 # Ask player to enter their name
 puts 'Please enter your name player 1'
 $player1 = gets.chomp
-puts "welcome #{$player1}"
+puts "Welcome #{$player1}"
 puts 'Please enter your name player 2'
 $player2 = gets.chomp
-puts "welcome #{$player2}"
+puts "Welcome #{$player2}"
 
 # Ask Player 1 to choose a token and assign a token to player 2
 def user_tokens(tokens)
@@ -28,7 +28,7 @@ end
 
 # Welcome the players
 def greetings
-  puts 'Welcome to the Tiac tac toe game'
+  puts 'Welcome to the Tic tac toe game'
   puts "#{$player1} and #{$player2} let's begin"
 end
 
