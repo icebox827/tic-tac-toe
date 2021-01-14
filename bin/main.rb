@@ -2,6 +2,13 @@
 # Create the token and the board
 tokens = %w[X O]
 board = [1, 2, 3, 4, 5, 6, 7, 8, 9]
+#ask player to enter their name
+puts 'Please enter your name player 1'
+$player1 = gets.chomp
+puts "welcome #{$player1}"
+puts 'Please enter your name player 2'
+$player2 = gets.chomp
+puts "welcome #{$player2}"
 
 # Invite users to enter their name and welcome them
 def greetings(tokens)
