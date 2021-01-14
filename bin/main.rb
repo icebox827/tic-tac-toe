@@ -48,11 +48,11 @@ def player_move
   puts "Your turn #{$player1}"
   move = gets.chomp.to_i
   puts "Your turn #{$player2}"
-  move = gets.chomp.to_i
   if move > 9
     puts 'You chose an invalid number, please choose again ...'
     player_move
   else
+    puts "Your turn #{$player2}"
     move
   end
 end
