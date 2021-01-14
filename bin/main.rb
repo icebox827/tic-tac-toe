@@ -43,21 +43,21 @@ def board_display(board)
 end
 
 # Ask user to player
-def player_move
+def player_move(board)
   puts 'Choose a number between 1 and 9...'
   counter = 0
-  while counter < 9
+  while counter < board.size
     puts "Your turn #{$player1}"
     move = gets.chomp.to_i
     puts "Your turn #{$player2}"
     move = gets.chomp.to_i
     counter += 1
-  end
-  if move > 9
-    puts 'You chose an invalid number, please choose again ...'
-    player_move
-  else
-    move
+    if move > 9
+      puts 'You chose an invalid number, please choose again ...'
+      player_move
+    else
+      move
+    end
   end
 end
 
