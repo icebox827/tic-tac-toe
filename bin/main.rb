@@ -13,6 +13,19 @@ puts 'Please enter your name player 2'
 $player2 = gets.chomp
 puts "welcome #{$player2}"
 
+# Ask Player 1 to choose a token and assign a token to player 2
+def user_tokens(tokens)
+  puts "#{$player1} choose your destiny token X or O"
+  player1_token = gets.chomp
+  if player1_token == tokens[0]
+    (puts "#{$player1} will use #{tokens[0]} and #{$player2} will use #{tokens[1]}")
+  elsif player1_token == tokens[1]
+    (puts "#{$player1} will use #{tokens[1]} and #{$player2} will use #{tokens[0]}")
+  else
+    puts 'Invalid token'
+  end
+end
+
 # Invite users to enter their name and welcome them
 def greetings(tokens)
   puts 'Welcome to the Tic Tac Toe game'
