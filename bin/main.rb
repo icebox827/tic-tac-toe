@@ -45,14 +45,18 @@ end
 # Ask user to player
 def player_move
   puts 'Choose a number between 1 and 9...'
-  puts "Your turn #{$player1}"
-  move = gets.chomp.to_i
-  puts "Your turn #{$player2}"
+  counter = 0
+  while counter < 9
+    puts "Your turn #{$player1}"
+    move = gets.chomp.to_i
+    puts "Your turn #{$player2}"
+    move = gets.chomp.to_i
+    counter += 1
+  end
   if move > 9
     puts 'You chose an invalid number, please choose again ...'
     player_move
   else
-    puts "Your turn #{$player2}"
     move
   end
 end
