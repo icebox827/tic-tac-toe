@@ -75,7 +75,8 @@ def player_move(board)
 end
 
 # Call the methods
-greetings(tokens)
+greetings
+user_tokens(tokens)
 board_display(board)
 player_move(board)
 
