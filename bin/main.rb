@@ -1,6 +1,7 @@
 #!/usr/bin/env ruby
 
 # rubocop:disable Style/GlobalVars
+# rubocop:disable Metrics/MethodLength
 
 # Create the token and the board
 tokens = %w[X O]
@@ -46,21 +47,37 @@ end
 def player_move(board)
   puts 'Choose a number between 1 and 9...'
   counter = 0
-  while counter < board.length
+  while counter < 10
+    puts "#{$player1} is your turn"
     move = gets.chomp.to_i
+    board_display(board)
     if move > 9
       puts 'You chose an invalid number, please choose again ...'
       counter -= 1
     else
-      move
+      counter += 1
+      puts "#{$player2} is your turn"
+      move = gets.chomp.to_i
+      if move > 9
+        puts 'You chose an invalid number, please choose again ...'
+        counter -= 1
+      else
+        board_display(board)
+        counter += 1
+        move
+      end
     end
-    counter += 1
   end
+  puts 'Game over'
+  puts "#{$player1} wins"
+  puts "#{$player2} wins"
+  puts "it's a draw"
 end
 
 # Call the methods
 greetings(tokens)
 board_display(board)
-player_move
+player_move(board)
 
 # rubocop:enable Style/GlobalVars
+# rubocop:enable Metrics/MethodLength
