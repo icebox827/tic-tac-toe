@@ -34,16 +34,6 @@ def greetings
 end
 
 # Create the board and display it
-def board_display(board)
-  puts 'Current board: '
-  puts " #{board[0]} | #{board[1]} | #{board[2]} "
-  puts '-----------'
-  puts " #{board[3]} | #{board[4]} | #{board[5]} "
-  puts '-----------'
-  puts " #{board[6]} | #{board[7]} | #{board[8]} "
-end
-
-# Ask user to player
 def player_move(board)
   puts 'Choose a number between 1 and 9...'
   counter = 0
@@ -51,6 +41,7 @@ def player_move(board)
     puts "#{$player1} is your turn"
     move = gets.chomp.to_i
     board_display(board)
+    user_move = board.select { |i| move == i }
     if move > 9
       puts 'You chose an invalid number, please choose again ...'
       counter -= 1
@@ -58,13 +49,14 @@ def player_move(board)
       counter += 1
       puts "#{$player2} is your turn"
       move = gets.chomp.to_i
+      user_move.any? { |i| board.include?(i) }
       if move > 9
         puts 'You chose an invalid number, please choose again ...'
         counter -= 1
       else
         board_display(board)
         counter += 1
-        move
+        break
       end
     end
   end
