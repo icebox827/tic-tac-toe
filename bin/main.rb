@@ -34,7 +34,6 @@ def greetings
 end
 
 # Create the board and display it
-
 def board_display(board)
   puts 'Tic tac toe board: '
   puts " #{board[0]} | #{board[1]} | #{board[2]} "
