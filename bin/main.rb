@@ -2,6 +2,7 @@
 
 # rubocop:disable Style/GlobalVars
 # rubocop:disable Metrics/MethodLength
+# rubocop:disable Metrics/PerceivedComplexity
 
 # Create the token and the board
 tokens = %w[X O]
@@ -59,8 +60,7 @@ def player_move(board)
       counter += 1
       puts "#{$player2} is your turn"
       move = gets.chomp.to_i
-      user_move.any? { |i| board.include?(i) }
-      if move > 9
+      if move > 9 || user_move.any? { |i| board.include?(i) }
         puts 'You chose an invalid number, please choose again ...'
         counter -= 1
       else
@@ -70,11 +70,12 @@ def player_move(board)
       end
     end
   end
-  puts 'Game over'
-  puts "#{$player1} wins"
-  puts "#{$player2} wins"
-  puts "it's a draw"
 end
+
+puts 'Game over'
+puts "#{$player1} wins"
+puts "#{$player2} wins"
+puts "it's a draw"
 
 # Call the methods
 greetings
@@ -84,3 +85,4 @@ player_move(board)
 
 # rubocop:enable Style/GlobalVars
 # rubocop:enable Metrics/MethodLength
+# rubocop:enable Metrics/PerceivedComplexity
