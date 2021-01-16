@@ -51,7 +51,6 @@ def player_move(board)
     puts "#{$player1} is your turn"
     move = gets.chomp.to_i
     board_display(board)
-    user_move = board.select { |i| move == i }
     if move > 9
       puts 'You chose an invalid number, please choose again ...'
       counter -= 1
