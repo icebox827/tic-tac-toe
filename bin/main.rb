@@ -2,7 +2,7 @@
 
 # rubocop:disable Style/GlobalVars
 # rubocop:disable Metrics/MethodLength
-# rubocop:disable Metrics/PerceivedComplexity
+
 
 # Create the token and the board
 tokens = %w[X O]
@@ -85,4 +85,4 @@ player_move(board)
 
 # rubocop:enable Style/GlobalVars
 # rubocop:enable Metrics/MethodLength
-# rubocop:enable Metrics/PerceivedComplexity
+
