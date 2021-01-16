@@ -3,7 +3,6 @@
 # rubocop:disable Style/GlobalVars
 # rubocop:disable Metrics/MethodLength
 
-
 # Create the token and the board
 tokens = %w[X O]
 board = [1, 2, 3, 4, 5, 6, 7, 8, 9]
@@ -85,4 +84,3 @@ player_move(board)
 
 # rubocop:enable Style/GlobalVars
 # rubocop:enable Metrics/MethodLength
-
