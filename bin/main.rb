@@ -47,7 +47,7 @@ end
 def player_move(board)
   puts 'Choose a number between 1 and 9...'
   counter = 0
-  while counter < 10
+  while counter < 2
     puts "#{$player1} is your turn"
     move = gets.chomp.to_i
     board_display(board)
