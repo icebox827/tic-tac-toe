@@ -10,8 +10,6 @@ class Tictactoe
     [3, 5, 7]
   ]
 
-  @invalid_move = []
-
   class Board < Tictactoe
     attr_reader :board
 
