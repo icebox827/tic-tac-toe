@@ -11,11 +11,11 @@ class Player
   end
 
   def self.player_turn(player1, player2, updated_board)
-    counter = updated_board.interger_counter
-    if counter.even?
-      player2
-    else
+    counter = updated_board.board_counter
+    if counter.odd?
       player1
+    else
+      player2
     end
   end
 end
