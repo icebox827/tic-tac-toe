@@ -33,16 +33,6 @@ def greetings
   puts "#{$player1} and #{$player2} let's begin"
 end
 
-# Create the board and display it
-def board_display(board)
-  puts 'Tic tac toe board: '
-  puts " #{board[0]} | #{board[1]} | #{board[2]} "
-  puts '-----------'
-  puts " #{board[3]} | #{board[4]} | #{board[5]} "
-  puts '-----------'
-  puts " #{board[6]} | #{board[7]} | #{board[8]} "
-end
-
 # Create move for the game
 def player_move(board)
   puts 'Choose a number between 1 and 9...'

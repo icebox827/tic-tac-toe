@@ -10,16 +10,17 @@ class Tictactoe
     [3, 5, 7]
   ]
 
+  @@invalid_move = []
+
   class Board < Tictactoe
     attr_reader :board
-
-    @@invalid_move = []
 
     def intialize
       @board = [1, 2, 3, 4, 5, 6, 7, 8, 9]
     end
 
-    def display_board
+    # Create a method to display the board 
+    def board_display(board)
       puts 'Tic tac toe board: '
       puts " #{@board[0]} | #{@board[1]} | #{@board[2]} "
       puts '-----------'
@@ -28,9 +29,5 @@ class Tictactoe
       puts " #{@board[6]} | #{@board[7]} | #{@board[8]} "
     end
 
-    def update_invalid_move
-      @@invalid_move.push(num)
-    end
   end
-
 end
