@@ -4,7 +4,10 @@ class Player
 
   def intialize(name)
     @name = name
-    @token = nil
+  end
+
+  def player_token(token)
+    @token = token
   end
 
   def self.player_turn(player1, player2, updated_board)
