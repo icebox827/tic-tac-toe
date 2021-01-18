@@ -20,7 +20,7 @@ class Tictactoe
     end
 
     # Create a method to display the board 
-    def board_display(board)
+    def board_display
       puts 'Tic tac toe board: '
       puts " #{@board[0]} | #{@board[1]} | #{@board[2]} "
       puts '-----------'

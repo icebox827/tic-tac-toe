@@ -3,9 +3,8 @@
 # rubocop:disable Style/GlobalVars
 # rubocop:disable Metrics/MethodLength
 
-# Create the token and the board
+# Create the token 
 tokens = %w[X O]
-board = [1, 2, 3, 4, 5, 6, 7, 8, 9]
 # Ask player to enter their name
 puts 'Please enter your name player 1'
 $player1 = gets.chomp.upcase
@@ -67,7 +66,7 @@ puts "it's a draw"
 # Call the methods
 greetings
 user_tokens(tokens)
-board_display(board)
+board_display
 player_move(board)
 
 # rubocop:enable Style/GlobalVars
