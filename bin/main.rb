@@ -1,10 +1,8 @@
 #!/usr/bin/env ruby
 
-# rubocop:disable Style/GlobalVars
-# rubocop:disable Metrics/MethodLength
-require_relative '../lib/player'
 require_relative '../lib/tictactoe'
 require_relative '../lib/moves'
+require_relative '../lib/player'
 
 # Create the token
 tokens = %w[X O]
@@ -45,5 +43,4 @@ greetings
 board_display(board)
 player_move
 
-# rubocop:enable Style/GlobalVars
-# rubocop:enable Metrics/MethodLength
+

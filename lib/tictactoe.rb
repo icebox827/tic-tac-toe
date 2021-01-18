@@ -1,5 +1,5 @@
 class Tictactoe
-  @@winning_moves = [
+  @winning_moves = [
     [1, 2, 3],
     [4, 5, 6],
     [7, 8, 9],
@@ -23,6 +23,10 @@ class Tictactoe
 
     def updated_board(player_move, player)
       board[player_move - 1] = player.token
+    end
+
+    def board_display
+      @board
     end
   end
 
