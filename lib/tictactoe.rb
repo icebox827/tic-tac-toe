@@ -10,4 +10,8 @@ class Tictactoe
     [3, 5, 7]
   ]
 
+  class Board < Tictactoe
+
+  end
+
 end
