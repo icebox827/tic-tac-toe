@@ -16,13 +16,14 @@ def player_name(tokens)
   puts 'Select your token : X or O'
   player_token = gets.chomp.upcase
   player_token == tokens[0] ? (puts "#{name} you will use #{tokens[0]}") : (puts "Player 2 you will use #{tokens[1]}")
-  player = Player.new(name, player_token)
+  player = Player.new(name, tokens[0])
+  player
 end
 
 # Welcome the players
 def greetings
   puts 'Welcome to the Tic tac toe game'
-  puts "#{self.player1} and #{self.player2} let's begin"
+  puts "#{player1} and #{player2} let's begin"
 end
 
 # Create a method to display the board
@@ -36,7 +37,6 @@ def board_display(board)
 end
 
 # Create move for the game
-
 
 # Call the methods
 player1 = player_name(tokens)
