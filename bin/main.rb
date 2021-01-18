@@ -16,7 +16,7 @@ def player_name(tokens)
   puts 'Select your token : X or O'
   player_token = gets.chomp.upcase
   player_token == tokens[0] ? (puts "#{name} you will use #{tokens[0]}") : (puts "Player 2 you will use #{tokens[1]}")
-  Player.new(name, player_token)
+  player = Player.new(name, player_token)
 end
 
 # Welcome the players
@@ -36,30 +36,7 @@ def board_display(board)
 end
 
 # Create move for the game
-def player_move(board)
-  puts 'Choose a number between 1 and 9...'
-  counter = 0
-  while counter < 10
-    puts "#{$player1} is your turn"
-    move = gets.chomp.to_i
-    board_display(board)
-    if move > 9
-      puts 'You chose an invalid number, please choose again ...'
-      counter -= 1
-    else
-      counter += 1
-      puts "#{$player2} is your turn"
-      move = gets.chomp.to_i
-      if move > 9
-        puts 'You chose an invalid number, please choose again ...'
-        counter -= 1
-      else
-        counter += 1
-        board_display(board)
-      end
-    end
-  end
-end
+
 
 # Call the methods
 player1 = player_name(tokens)
