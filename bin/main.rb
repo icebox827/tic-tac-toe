@@ -2,6 +2,10 @@
 
 # rubocop:disable Style/GlobalVars
 # rubocop:disable Metrics/MethodLength
+
+# Create the token and the board
+tokens = %w[X O]
+board = [1, 2, 3, 4, 5, 6, 7, 8, 9]
 # Ask player to enter their name
 puts 'Please enter your name player 1'
 $player1 = gets.chomp
