@@ -2,7 +2,7 @@ class Player
   attr_accessor :token
   attr_reader :name
 
-  def intialize(name)
+  def initialize(name)
     @name = name
   end
 
