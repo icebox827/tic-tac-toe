@@ -10,7 +10,7 @@ class Tictactoe
     [3, 5, 7]
   ]
 
-  @@invalid_move = []
+  @invalid_move = []
 
   class Board < Tictactoe
     attr_reader :board
@@ -28,6 +28,9 @@ class Tictactoe
       puts '-----------'
       puts " #{@board[6]} | #{@board[7]} | #{@board[8]} "
     end
+  end
+
+  class Game < Tictactoe
 
   end
 end
