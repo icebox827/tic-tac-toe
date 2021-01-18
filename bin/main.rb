@@ -10,11 +10,11 @@ require_relative '../lib/moves'
 tokens = %w[X O]
 
 # Ask player to enter their name and select token
-def player_name(_token)
+def player_name(tokens)
   puts 'Player 1 enter your name'
   name = gets.chomp.upcase
   puts 'Select your token : X or O'
-  player_token = gets.chomp
+  player_token = gets.chomp.upcase
   player_token == tokens[0] ? (puts "#{name} you will use #{tokens[0]}") : (puts "Player 2 you will use #{tokens[1]}")
   Player.new(name, player_token)
 end
@@ -62,8 +62,8 @@ def player_move(board)
 end
 
 # Call the methods
-player1 = player_name(_token)
-player2 = player_name(_token)
+player1 = player_name(tokens)
+player2 = player_name(tokens)
 greetings
 board_display(board)
 player_move
