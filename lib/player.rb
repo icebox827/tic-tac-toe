@@ -1,12 +1,10 @@
 class Player
-  attr_reader :name, :token
+  attr_accessor :token
+  attr_reader :name
 
   def intialize(name)
     @name = name
-  end
-
-  def tokens(token)
-    @token = token
+    @token = nil
   end
 
   def self.player_turn(player1, player2, updated_board)
