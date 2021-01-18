@@ -17,7 +17,7 @@ class Tictactoe
       @board = [1, 2, 3, 4, 5, 6, 7, 8, 9]
     end
 
-    # Create a method to display the board 
+    # Create a method to display the board
     def board_display
       puts 'Tic tac toe board: '
       puts " #{@board[0]} | #{@board[1]} | #{@board[2]} "
@@ -29,6 +29,6 @@ class Tictactoe
   end
 
   class Game < Tictactoe
-    
+
   end
 end
