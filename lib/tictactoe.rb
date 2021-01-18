@@ -29,6 +29,6 @@ class Tictactoe
   end
 
   class Game < Tictactoe
-
+    
   end
 end
