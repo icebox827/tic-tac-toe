@@ -3,34 +3,26 @@
 # rubocop:disable Style/GlobalVars
 # rubocop:disable Metrics/MethodLength
 require_relative '../lib/player'
+require_relative '../lib/tictactoe'
+require_relative '../lib/moves'
 
 # Create the token
 tokens = %w[X O]
-# Ask player to enter their name
-puts 'Please enter your name player 1'
-$player1 = gets.chomp.upcase
-puts "Welcome #{$player1}"
-puts 'Please enter your name player 2'
-$player2 = gets.chomp.upcase
-puts "Welcome #{$player2}"
 
-# Ask Player 1 to choose a token and assign a token to player 2
-def user_tokens(tokens)
-  puts "#{$player1} choose your destiny token X or O"
-  player1_token = gets.chomp.upcase
-  if player1_token == tokens[0]
-    (puts "#{$player1} will use #{tokens[0]} and #{$player2} will use #{tokens[1]}")
-  elsif player1_token == tokens[1]
-    (puts "#{$player1} will use #{tokens[1]} and #{$player2} will use #{tokens[0]}")
-  else
-    puts 'Invalid token'
-  end
+# Ask player to enter their name and select token
+def player_name(_token)
+  puts 'Player 1 enter your name'
+  name = gets.chomp.upcase
+  puts 'Select your token : X or O'
+  player_token = gets.chomp
+  player_token == tokens[0] ? (puts "#{name} you will use #{tokens[0]}") : (puts "Player 2 you will use #{tokens[1]}")
+  Player.new(name, player_token)
 end
 
 # Welcome the players
 def greetings
   puts 'Welcome to the Tic tac toe game'
-  puts "#{$player1} and #{$player2} let's begin"
+  puts "#{self.player1} and #{self.player2} let's begin"
 end
 
 # Create a method to display the board
@@ -70,10 +62,11 @@ def player_move(board)
 end
 
 # Call the methods
+player1 = player_name(_token)
+player2 = player_name(_token)
 greetings
-user_tokens(tokens)
 board_display(board)
-player_move(board)
+player_move
 
 # rubocop:enable Style/GlobalVars
 # rubocop:enable Metrics/MethodLength
