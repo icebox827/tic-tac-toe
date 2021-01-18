@@ -2,8 +2,9 @@
 
 # rubocop:disable Style/GlobalVars
 # rubocop:disable Metrics/MethodLength
+require_relative '../lib/player'
 
-# Create the token 
+# Create the token
 tokens = %w[X O]
 # Ask player to enter their name
 puts 'Please enter your name player 1'
