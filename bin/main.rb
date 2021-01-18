@@ -69,11 +69,6 @@ def player_move(board)
   end
 end
 
-puts 'Game over'
-puts "#{$player1} wins"
-puts "#{$player2} wins"
-puts "it's a draw"
-
 # Call the methods
 greetings
 user_tokens(tokens)
