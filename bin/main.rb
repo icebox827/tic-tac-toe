@@ -72,7 +72,7 @@ end
 # Call the methods
 greetings
 user_tokens(tokens)
-board_display
+board_display(board)
 player_move(board)
 
 # rubocop:enable Style/GlobalVars
