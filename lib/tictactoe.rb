@@ -26,6 +26,14 @@ class Tictactoe
       puts '-----------'
       puts " #{@board[6]} | #{@board[7]} | #{@board[8]} "
     end
+
+    def integer_counter
+      board.count { |i| i.is_a? Integer }
+    end
+
+    def updated_board(player_move, player)
+      board[player_move - 1] = player.token
+    end
   end
 
   class Game < Tictactoe
