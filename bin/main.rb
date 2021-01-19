@@ -8,7 +8,7 @@ require_relative '../lib/player'
 tokens = %w[X O]
 
 # Welcome the players
-def greeting
+def greetings
   puts 'Welcome to the Tictactoe game'
 end
 
@@ -31,5 +31,5 @@ puts "Welcome to the game #{player2_name}\n\n"
 # Create move for the game
 
 # Call the methods
-greeting
+greetings
 
