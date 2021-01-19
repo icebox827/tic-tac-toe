@@ -1,4 +1,8 @@
 # rubocop:disable Style/FormatStringToken
+# rubocop:disable Style/MixinUsage
+# rubocop:disable Metrics/CyclomaticComplexity
+# rubocop:disable Metrics/PerceivedComplexity
+# rubocop:disable Metrics/MethodLength
 
 require_relative './../lib/board'
 require_relative './../lib/player'
@@ -32,10 +36,10 @@ def players
   puts "welcome #{@player2}"
   @player1_token = %w[X O].sample
   @player2_token = if @player1_token == 'X'
-                      'O'
-                    else
-                      'X'
-                    end
+                     'O'
+                   else
+                     'X'
+                   end
   puts "#{@player1} token is #{@player1_token}"
   puts "#{@player2} token is #{@player2_token}"
 end
@@ -46,7 +50,7 @@ def moves
   while game == true
     puts "#{@player1} select between 1 -9"
     @player1_move = gets.chomp.to_i
-    if @player1_move > 9 || @player1_move < 1 || @player1_move.instance_of?(String) 
+    if @player1_move > 9 || @player1_move < 1 || @player1_move.instance_of?(String)
       puts 'Wrong move! try again'
     else
       @board[@player1_move] = @player1_token if @board[@player1_move] == ' '
@@ -63,7 +67,7 @@ def moves
     end
     puts "#{@player2} select between 1 - 9"
     @player2_move = gets.chomp.to_i
-    if @player2_move > 9 || @player1_move < 1 || @player1_move.instance_of?(String) 
+    if @player2_move > 9 || @player1_move < 1 || @player1_move.instance_of?(String)
       puts 'Wrong move! you loose your turn'
     else
       @board[@player2_move] = @player2_token if @board[@player2_move] == ' '
@@ -95,3 +99,7 @@ tic_tac_toe.players
 tic_tac_toe.moves
 
 # rubocop:enable Style/FormatStringToken
+# rubocop:enable Style/MixinUsage
+# rubocop:enable Metrics/CyclomaticComplexity
+# rubocop:enable Metrics/PerceivedComplexity
+# rubocop:enable Metrics/MethodLength
