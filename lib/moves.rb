@@ -24,12 +24,8 @@ class Game
     end
   end
 
-  def valid_moves(move)
-    if move > 9
-      puts 'Ivalid moves, please try again :'
-    else
-      move = gets.chomp.to_i
-    end
+  def self.valid_moves?(move, board)
+    board.include?(move)
   end
 
   def win(board, player); end

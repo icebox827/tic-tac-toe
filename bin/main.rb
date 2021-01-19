@@ -47,8 +47,6 @@ def board_display
   puts " #{board[6]} | #{board[7]} | #{board[8]} "
 end
 
-
-
 # Create a loop to play the game
 9.times do
   
