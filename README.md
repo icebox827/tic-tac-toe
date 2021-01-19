@@ -37,6 +37,10 @@ Command line based game built with Ruby
 - Twitter: [@ox_emmy](https://twitter.com/ox_emmy)
 - LinkedIn: [LinkedIn](https://www.linkedin.com/in/emanuel-okello-1217b4b3/)
 
+## Live Demo
+
+[Live Demo Link](https://repl.it/@DenisLafontant/WhisperedBelovedPlots#games.rb)
+
 ## 🤝 Contributing
 
 Contributions, issues, and feature requests are welcome!
