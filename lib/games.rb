@@ -38,7 +38,9 @@ class TicTacToe
   end
 
   def moves
-    while true
+    game = true
+
+    while game == true
       puts "#{@player1} select between 1 -9"
       @player1_move = gets.chomp.to_i
       @board[@player1_move] = @player1_token if @board[@player1_move] == ' '
