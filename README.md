@@ -7,9 +7,12 @@ Command line based game built with Ruby
 - Have Ruby programming language install on you computer. you can check it at <https://www.ruby-lang.org/en/downloads/>
 - Clone the repository at <https://github.com/icebox827/tic-tac-toe.git> if you are using https
 - Or you can clone it ver SSH at git@github.com:icebox827/tic-tac-toe.git
-- Execute bin/main.rb file in a terminal
-- Each player has to enter their name
-- Play the game
+
+## Usage
+
+- Run 'bin/main.rb' in your terminal to start the game.
+- Next you will be promted to enter each players name and each player will be assigned a symbol to use in the game.
+- Now you are ready to play the game
 
 ## How to play
 
