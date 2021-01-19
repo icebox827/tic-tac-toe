@@ -28,18 +28,26 @@ puts 'Choose one of those tokens : X or O'
 puts "#{player1.name} choose a token"
 token1 = gets.chomp.upcase
 player1.token = token1
-if player1.token == tokens[0] 
+if player1.token == tokens[0]
   (puts "#{player1.name} will use #{tokens[0]} and #{player2.name} will use #{tokens[1]}")
 elsif player1.token == tokens[1]
   (puts "#{player1.name} will use #{tokens[1]} and #{player2.name} will use #{tokens[0]}")
-else 
+else
   puts 'Invalid token try again'
   token1
 end
 
 # Create a method to display the board
-
+def board_display
+    puts 'Tic tac toe board: '
+    puts " #{board[0]} | #{board[1]} | #{board[2]} "
+    puts '-----------'
+    puts " #{board[3]} | #{board[4]} | #{board[5]} "
+    puts '-----------'
+    puts " #{board[6]} | #{board[7]} | #{board[8]} "
+  end
 # Create move for the game
 
 # Call the methods
 greetings
+board_display

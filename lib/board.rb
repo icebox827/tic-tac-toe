@@ -12,15 +12,6 @@ class Board
   def updated_board(player_move, player)
     board[player_move - 1] = player.token
   end
-
-  def board_display
-    puts 'Tic tac toe board: '
-    puts " #{board[0]} | #{board[1]} | #{board[2]} "
-    puts '-----------'
-    puts " #{board[3]} | #{board[4]} | #{board[5]} "
-    puts '-----------'
-    puts " #{board[6]} | #{board[7]} | #{board[8]} "
-  end
 end
 
 class Game
