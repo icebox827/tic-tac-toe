@@ -24,7 +24,18 @@ player2 = Player.new(player2_name)
 puts "Welcome to the game #{player2_name}\n\n"
 
 # Select token
-
+puts 'Choose one of those tokens : X or O'
+puts "#{player1.name} choose a token"
+token1 = gets.chomp.upcase
+player1.token = token1
+if player1.token == tokens[0] 
+  (puts "#{player1.name} will use #{tokens[0]} and #{player2.name} will use #{tokens[1]}")
+elsif player1.token == tokens[1]
+  (puts "#{player1.name} will use #{tokens[1]} and #{player2.name} will use #{tokens[0]}")
+else 
+  puts 'Invalid token try again'
+  token1
+end
 
 # Create a method to display the board
 
@@ -32,4 +43,3 @@ puts "Welcome to the game #{player2_name}\n\n"
 
 # Call the methods
 greetings
-
