@@ -1,6 +1,6 @@
 #!/usr/bin/env ruby
 
-require_relative '../lib/tictactoe'
+require_relative '../lib/board'
 require_relative '../lib/moves'
 require_relative '../lib/player'
 
@@ -47,20 +47,12 @@ def board_display
   puts " #{board[6]} | #{board[7]} | #{board[8]} "
 end
 
-# Create move for the player
-def player_move
-  puts 'Choose a number between 1 and 9...'
-  move = gets.chomp.to_i
-  if move > 9
-    puts 'Wrong number, please try again ...'
-    player_move
-  else
-    move
-  end
-end
+
 
 # Create a loop to play the game
-
+9.times do
+  
+end
 
 # Call the methods
 greetings
