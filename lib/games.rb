@@ -2,7 +2,6 @@
 # rubocop:disable Metrics/PerceivedComplexity
 # rubocop:disable Metrics/MethodLength
 # rubocop:disable Metrics/AbcSize
-# rubocop:disable Style/InfiniteLoop
 # rubocop:disable Style/FormatStringToken
 
 class TicTacToe
@@ -96,5 +95,4 @@ end
 # rubocop:enable Metrics/PerceivedComplexity
 # rubocop:enable Metrics/MethodLength
 # rubocop:enable Metrics/AbcSize
-# rubocop:enable Style/InfiniteLoop
 # rubocop:enable Style/FormatStringToken
