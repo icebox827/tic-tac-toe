@@ -9,4 +9,10 @@ class Game
     [1, 5, 9],
     [3, 5, 7]
   ]
+
+  def self.valid_moves?(board, move)
+    board.include?(move)
+  end
+
+  
 end
