@@ -1,22 +1,12 @@
-module Moves
-  invalid_move = []
-
-  def player_move
-    counter = 0
-
-    while counter < 10
-      move = gets.chomp.to_i
-      if move > 9
-        puts 'Invalid number, please try again :'
-        counter -= 1
-      else
-        counter += 1
-        move = gets.chomp.to_i
-      end
-    end
-  end
-
-  def update_invalid_move
-    invalid_move << move
-  end
+class Game
+  @winning_moves = [
+    [1, 2, 3],
+    [4, 5, 6],
+    [7, 8, 9],
+    [1, 4, 7],
+    [2, 5, 8],
+    [3, 6, 9],
+    [1, 5, 9],
+    [3, 5, 7]
+  ]
 end
