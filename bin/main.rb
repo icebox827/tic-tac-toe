@@ -67,8 +67,8 @@ end
 
 def turn(board, player_token)
   flag = false
-  while !flag
-    @player_move = gets.chomp.to_i
+  @player_move = gets.chomp.to_i
+  until flag
     if empty?(@player_move, board) && valid_object?(@player_move) && valid_number?(@player_move)
       player_moves(@player_move, player_token, board)
       clear_terminal
@@ -78,10 +78,6 @@ def turn(board, player_token)
       puts 'wrong move, try again'
       flag = false
       @player_move = gets.chomp.to_i
-      player_moves(@player_move, player_token, board)
-      clear_terminal
-      display_board(board)
-      flag = true
       # TODO
     end
   end
