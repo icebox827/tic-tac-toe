@@ -31,6 +31,24 @@ class PlayerMove
   def player_moves(player_move, token, board)
     board[player_move] = token
   end
+
+  def valid_number?(user_input)
+    return false if user_input > 9 || user_input < 1
+
+    true
+  end
+
+  def valid_object?(user_input)
+    return true if user_input.instance_of?(Integer)
+
+    false
+  end
+
+  def empty?(user_input, board)
+    return true if board[user_input.to_i] == ' '
+
+    false
+  end
 end
 
 # rubocop:enable Metrics/CyclomaticComplexity

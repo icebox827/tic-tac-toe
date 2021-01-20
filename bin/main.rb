@@ -1,10 +1,6 @@
 #!/usr/bin/env ruby
 
 # rubocop:disable Style/FormatStringToken
-# rubocop:disable Style/MixinUsage
-# rubocop:disable Metrics/CyclomaticComplexity
-# rubocop:disable Metrics/PerceivedComplexity
-# rubocop:disable Metrics/MethodLength
 
 require_relative './../lib/board'
 require_relative './../lib/player'
@@ -41,22 +37,13 @@ def players
   puts "#{@player2} token is #{@player2_token}"
 end
 
-def moves(board)
+def move(board)
   game = true
 
   while game == true
     puts "#{@player1} select between 1 -9"
     @player1_move = gets.chomp.to_i
-    if @player1_move > 9 || @player1_move < 1 || @player1_move.instance_of?(String)
-      puts 'Wrong move! you loose your turn'
-    elsif board[@player1_move] == ' '
-      player_moves(@player1_move, @player1_token, board)
-      # board[@player1_move] = @player1_token
-      clear_terminal
-      display_board(board)
-    else
-      puts 'Move already taken! you loose your turn'
-    end
+    turn(board, @player1_move, @player1_token)
     if win?(board, @player1_token)
       puts "#{@player1} WINS!!!!"
       break
@@ -65,17 +52,10 @@ def moves(board)
       puts "It's a draw"
       break
     end
+
     puts "#{@player2} select between 1 - 9"
     @player2_move = gets.chomp.to_i
-    if @player2_move > 9 || @player1_move < 1 || @player1_move.instance_of?(String)
-      puts 'Wrong move! you loose your turn'
-    elsif board[@player2_move] == ' '
-      player_moves(@player2_move, @player2_token, board)
-      clear_terminal
-      display_board(board)
-    else
-      puts 'Move already taken! you loose your turn'
-    end
+    turn(board, @player2_move, @player2_token)
     if win?(board, @player2_token)
       puts "#{@player2} WINS!!!!"
       break
@@ -84,6 +64,14 @@ def moves(board)
       puts "It's a draw"
       break
     end
+  end
+end
+
+def turn(board, player_move, player_token)
+  if empty?(player_move, board) && valid_object?(player_move) && valid_number?(player_move)
+    player_moves(player_move, player_token, board)
+    clear_terminal
+    display_board(board)
   end
 end
 
@@ -101,10 +89,6 @@ empty_board = new_board.empty_board(board_array)
 tic_tac_toe = PlayerMove.new
 display_board(empty_board)
 tic_tac_toe.players
-tic_tac_toe.moves(empty_board)
+tic_tac_toe.move(empty_board)
 
 # rubocop:enable Style/FormatStringToken
-# rubocop:enable Style/MixinUsage
-# rubocop:enable Metrics/CyclomaticComplexity
-# rubocop:enable Metrics/PerceivedComplexity
-# rubocop:enable Metrics/MethodLength
