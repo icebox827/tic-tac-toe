@@ -24,6 +24,10 @@ class PlayerMove
       false
     end
   end
+
+  def tie?(board)
+    board.slice(1, 10).include? ' '
+  end
 end
 
 # rubocop:enable Metrics/CyclomaticComplexity

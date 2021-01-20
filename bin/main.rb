@@ -1,3 +1,5 @@
+#!/usr/bin/env ruby
+
 # rubocop:disable Style/FormatStringToken
 # rubocop:disable Style/MixinUsage
 # rubocop:disable Metrics/CyclomaticComplexity
@@ -60,7 +62,7 @@ def moves
       puts "#{@player1} WINS!!!!"
       break
     end
-    unless @board.slice(1, 10).include? ' '
+    unless tie?(@board)
       puts "It's a draw"
       break
     end
@@ -79,7 +81,7 @@ def moves
       puts "#{@player2} WINS!!!!"
       break
     end
-    unless @board.slice(1, 10).include? ' '
+    unless tie?(@board)
       puts "It's a draw"
       break
     end
