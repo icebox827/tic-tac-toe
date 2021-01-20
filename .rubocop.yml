@@ -34,6 +34,8 @@ Style/AndOr:
   Enabled: false
 Style/DefWithParentheses:
   Enabled: false
+Style/FormatStringToken:
+  Enabled: false
 Style/FrozenStringLiteralComment:
   EnforcedStyle: never
 
