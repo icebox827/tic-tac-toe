@@ -1,7 +1,5 @@
 #!/usr/bin/env ruby
 
-# rubocop:disable Style/FormatStringToken
-
 require_relative './../lib/board'
 require_relative './../lib/player'
 
@@ -42,8 +40,8 @@ def move(board)
 
   while game == true
     puts "#{@player1} select between 1 -9"
-    @player1_move = gets.chomp.to_i
-    turn(board, @player1_move, @player1_token)
+    # @player1_move = gets.chomp.to_i
+    turn(board, @player1_token)
     if win?(board, @player1_token)
       puts "#{@player1} WINS!!!!"
       break
@@ -55,7 +53,7 @@ def move(board)
 
     puts "#{@player2} select between 1 - 9"
     @player2_move = gets.chomp.to_i
-    turn(board, @player2_move, @player2_token)
+    turn(board, @player2_token)
     if win?(board, @player2_token)
       puts "#{@player2} WINS!!!!"
       break
@@ -67,11 +65,25 @@ def move(board)
   end
 end
 
-def turn(board, player_move, player_token)
-  if empty?(player_move, board) && valid_object?(player_move) && valid_number?(player_move)
-    player_moves(player_move, player_token, board)
-    clear_terminal
-    display_board(board)
+def turn(board, player_token)
+  flag = false
+  while !flag
+    @player_move = gets.chomp.to_i
+    if empty?(@player_move, board) && valid_object?(@player_move) && valid_number?(@player_move)
+      player_moves(@player_move, player_token, board)
+      clear_terminal
+      display_board(board)
+      flag = true
+    else
+      puts 'wrong move, try again'
+      flag = false
+      @player_move = gets.chomp.to_i
+      player_moves(@player_move, player_token, board)
+      clear_terminal
+      display_board(board)
+      flag = true
+      # TODO
+    end
   end
 end
 
@@ -90,5 +102,3 @@ tic_tac_toe = PlayerMove.new
 display_board(empty_board)
 tic_tac_toe.players
 tic_tac_toe.move(empty_board)
-
-# rubocop:enable Style/FormatStringToken
