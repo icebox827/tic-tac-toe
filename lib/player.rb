@@ -1,7 +1,6 @@
 # rubocop:disable Metrics/CyclomaticComplexity
 # rubocop:disable Metrics/PerceivedComplexity
 # rubocop:disable Metrics/AbcSize
-
 class PlayerMove
   def win?(board, player_token)
     if board[1] == player_token and board[2] == player_token and board[3] == player_token
@@ -29,9 +28,9 @@ class PlayerMove
     board.slice(1, 10).include? ' '
   end
 
-  # def moves(player_move, board)
-
-  # end
+  def player_moves(player_move, token, board)
+    board[player_move] = token
+  end
 end
 
 # rubocop:enable Metrics/CyclomaticComplexity

@@ -50,7 +50,8 @@ def moves(board)
     if @player1_move > 9 || @player1_move < 1 || @player1_move.instance_of?(String)
       puts 'Wrong move! you loose your turn'
     elsif board[@player1_move] == ' '
-      board[@player1_move] = @player1_token
+      player_moves(@player1_move, @player1_token, board)
+      # board[@player1_move] = @player1_token
       clear_terminal
       display_board(board)
     else
@@ -69,7 +70,7 @@ def moves(board)
     if @player2_move > 9 || @player1_move < 1 || @player1_move.instance_of?(String)
       puts 'Wrong move! you loose your turn'
     elsif board[@player2_move] == ' '
-      board[@player2_move] = @player2_token
+      player_moves(@player2_move, @player2_token, board)
       clear_terminal
       display_board(board)
     else
@@ -98,7 +99,7 @@ board_array = [' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ']
 new_board = Board.new
 empty_board = new_board.empty_board(board_array)
 tic_tac_toe = PlayerMove.new
-tic_tac_toe.display_board(empty_board)
+display_board(empty_board)
 tic_tac_toe.players
 tic_tac_toe.moves(empty_board)
 
