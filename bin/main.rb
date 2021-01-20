@@ -1,3 +1,5 @@
+#!/usr/bin/env ruby
+
 # rubocop:disable Style/FormatStringToken
 # rubocop:disable Style/MixinUsage
 # rubocop:disable Metrics/CyclomaticComplexity
