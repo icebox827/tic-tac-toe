@@ -10,9 +10,6 @@ require_relative './../lib/player'
 puts 'Welcome to Tic Tac Toe'
 puts ' '
 
-puts 'Welcome to Tic Tac Toe'
-puts ' '
-
 public
 
 include Board
@@ -36,10 +33,10 @@ def players
   puts "welcome #{@player2}"
   @player1_token = %w[X O].sample
   @player2_token = if @player1_token == 'X'
-                     'O'
-                   else
-                     'X'
-                   end
+                      'O'
+                    else
+                      'X'
+                    end
   puts "#{@player1} token is #{@player1_token}"
   puts "#{@player2} token is #{@player2_token}"
 end
@@ -50,12 +47,14 @@ def moves
   while game == true
     puts "#{@player1} select between 1 -9"
     @player1_move = gets.chomp.to_i
-    if @player1_move > 9 || @player1_move < 1 || @player1_move.instance_of?(String)
-      puts 'Wrong move! try again'
-    else
-      @board[@player1_move] = @player1_token if @board[@player1_move] == ' '
+    if @player1_move > 9 || @player1_move < 1 || @player1_move.instance_of?(String) 
+      puts 'Wrong move! you loose your turn'
+    elsif @board[@player1_move] == ' '
+      @board[@player1_move] = @player1_token 
       clear_terminal
       display_board
+    else
+      puts 'Move already taken! you loose your turn'
     end
     if win?(@board, @player1_token)
       puts "#{@player1} WINS!!!!"
@@ -67,12 +66,14 @@ def moves
     end
     puts "#{@player2} select between 1 - 9"
     @player2_move = gets.chomp.to_i
-    if @player2_move > 9 || @player1_move < 1 || @player1_move.instance_of?(String)
+    if @player2_move > 9 || @player1_move < 1 || @player1_move.instance_of?(String) 
       puts 'Wrong move! you loose your turn'
-    else
-      @board[@player2_move] = @player2_token if @board[@player2_move] == ' '
+    elsif @board[@player2_move] == ' '
+      @board[@player2_move] = @player2_token 
       clear_terminal
       display_board
+    else
+      puts 'Move already taken! you loose your turn'
     end
     if win?(@board, @player2_token)
       puts "#{@player2} WINS!!!!"
