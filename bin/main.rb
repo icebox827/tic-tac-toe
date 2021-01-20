@@ -6,6 +6,7 @@
 
 require_relative './../lib/board'
 require_relative './../lib/player'
+require_relative './../lib/move'
 
 puts 'Welcome to Tic Tac Toe'
 puts ' '
@@ -24,59 +25,71 @@ def display_board
   (0..1).each { puts ' ' }
 end
 
+# Ask player to enter their name
+def player
+  puts 'Please enter your name player 1'
+  player1_name = gets.chomp.upcase
+  @player1 = Player.new(player1_name)
+  puts "Welcome to the game #{player1_name}\n\n"
+
+  puts 'Please enter your name player 2'
+  player2_name = gets.chomp.upcase
+  @player2 = Player.new(player2_name)
+  puts "Welcome to the game #{player2_name}\n\n"
+end
+
+# Select token
 def players
-  puts 'enter your name player 1'
-  @player1 = gets.chomp.upcase
-  puts "welcome #{@player1}"
-  puts 'enter your name player 2'
-  @player2 = gets.chomp.upcase
-  puts "welcome #{@player2}"
   @player1_token = %w[X O].sample
   @player2_token = if @player1_token == 'X'
                      'O'
                    else
                      'X'
                    end
-  puts "#{@player1} token is #{@player1_token}"
-  puts "#{@player2} token is #{@player2_token}"
+  puts "#{@player1.name} token is #{@player1_token}"
+  puts "#{@player2.name} token is #{@player2_token}"
 end
 
 def moves
   game = true
 
   while game == true
-    puts "#{@player1} select between 1 -9"
+    puts "#{@player1.name} select between 1 -9"
     @player1_move = gets.chomp.to_i
     if @player1_move > 9 || @player1_move < 1 || @player1_move.instance_of?(String)
-      puts 'Wrong move! you loose your turn'
+      puts 'Wrong move! try again'
+      moves
     elsif @board[@player1_move] == ' '
       @board[@player1_move] = @player1_token
       clear_terminal
       display_board
     else
-      puts 'Move already taken! you loose your turn'
+      puts 'Move already taken! try again'
+      moves
     end
     if win?(@board, @player1_token)
-      puts "#{@player1} WINS!!!!"
+      puts "#{@player1.name} WINS!!!!"
       break
     end
     unless @board.slice(1, 10).include? ' '
       puts "It's a draw"
       break
     end
-    puts "#{@player2} select between 1 - 9"
+    puts "#{@player2.name} select between 1 - 9"
     @player2_move = gets.chomp.to_i
-    if @player2_move > 9 || @player1_move < 1 || @player1_move.instance_of?(String)
-      puts 'Wrong move! you loose your turn'
+    if @player2_move > 9 || @player2_move < 1 || @player2_move.instance_of?(String)
+      puts 'Wrong move! try again'
+      moves
     elsif @board[@player2_move] == ' '
       @board[@player2_move] = @player2_token
       clear_terminal
       display_board
     else
-      puts 'Move already taken! you loose your turn'
+      puts 'Move already taken! try again'
+      moves
     end
     if win?(@board, @player2_token)
-      puts "#{@player2} WINS!!!!"
+      puts "#{@player2.name} WINS!!!!"
       break
     end
     unless @board.slice(1, 10).include? ' '
@@ -96,6 +109,7 @@ end
 
 tic_tac_toe = PlayerMove.new
 tic_tac_toe.display_board
+tic_tac_toe.player
 tic_tac_toe.players
 tic_tac_toe.moves
 
