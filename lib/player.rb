@@ -1,23 +1,20 @@
-# rubocop:disable Metrics/CyclomaticComplexity
-# rubocop:disable Metrics/PerceivedComplexity
-# rubocop:disable Metrics/AbcSize
 class PlayerMove
   def win?(board, player_token)
-    if board[1] == player_token and board[2] == player_token and board[3] == player_token
+    if board[1, 3].all? player_token
       true
-    elsif board[4] == player_token and board[5] == player_token and board[6] == player_token
+    elsif board[4, 3].all? player_token
       true
-    elsif board[7] == player_token and board[8] == player_token and board[9] == player_token
+    elsif board[7, 3].all? player_token
       true
-    elsif board[2] == player_token and board[5] == player_token and board[8] == player_token
+    elsif [board[2], board[5], board[8]].all? player_token
       true
-    elsif board[3] == player_token and board[6] == player_token and board[9] == player_token
+    elsif [board[3], board[6], board[9]].all? player_token
       true
-    elsif board[1] == player_token and board[5] == player_token and board[9] == player_token
+    elsif [board[1], board[5], board[9]].all? player_token
       true
-    elsif board[3] == player_token and board[5] == player_token and board[7] == player_token
+    elsif [board[3], board[5], board[7]].all? player_token
       true
-    elsif board[1] == player_token and board[4] == player_token and board[7] == player_token
+    elsif [board[1], board[4], board[7]].all? player_token
       true
     else
       false
