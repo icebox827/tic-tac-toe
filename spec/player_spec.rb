@@ -20,5 +20,8 @@ describe PlayerMove do
     it 'should return false if player plays less than 1 or greater than 9' do
       expect(player.valid_number?(invalid_player_move)).to be false
     end
+    it 'should return true if player plays an integer' do
+      expect(player.valid_object?(valid_player_move)).to be true
+    end
   end
 end
