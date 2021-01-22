@@ -10,7 +10,7 @@ describe PlayerMove do
   player_token = 'X'
 
   loss_board = [1, 2, 3, 4, 5, 6, 7, 8, 9]
-  win_board = [%w[X X X X X X X X X], %w[O O O O O O O O O]].sample
+  win_board = %w[X X X X X X X X X]
 
   describe '#methods' do
     it 'should intantiate a class' do
