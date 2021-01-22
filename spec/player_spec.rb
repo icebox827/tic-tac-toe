@@ -3,6 +3,7 @@ require_relative './../lib/player'
 describe PlayerMove do
   player = PlayerMove.new
   board = [' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ']
+  full_board = %W[X O O X X O O O X].sample
   player_token = %w[X O].sample
   valid_player_move = [1, 2, 3, 4, 5, 6, 7, 8, 9].sample
   invalid_player_move = [0, 10].sample
@@ -26,6 +27,12 @@ describe PlayerMove do
     end
     it 'should return false if player plays any thing other than a number' do
       expect(player.valid_object?(string_player_move)).to be false
+    end
+    it 'should return true if player plays in an available spot' do
+      expect(player.empty?(valid_player_move, board)).to be true
+    end
+    it 'should return false if player plays in an unavailable spot' do
+      expect(player.empty?(valid_player_move, full_board)).to be false
     end
   end
 end
