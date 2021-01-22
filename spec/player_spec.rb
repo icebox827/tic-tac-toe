@@ -3,11 +3,14 @@ require_relative './../lib/player'
 describe PlayerMove do
   player = PlayerMove.new
   board = [' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ']
-  full_board = %W[X O O X X O O O X].sample
-  player_token = %w[X O].sample
+  full_board = %w[X O O X X O O O X].sample
   valid_player_move = [1, 2, 3, 4, 5, 6, 7, 8, 9].sample
   invalid_player_move = [0, 10].sample
   string_player_move = %w[x c #].sample
+  player_token = 'X'
+
+  loss_board = [1, 2, 3, 4, 5, 6, 7, 8, 9]
+  win_board = [%w[X X X X X X X X X], %w[O O O O O O O O O]].sample
 
   describe '#methods' do
     it 'should intantiate a class' do
@@ -33,6 +36,12 @@ describe PlayerMove do
     end
     it 'should return false if player plays in an unavailable spot' do
       expect(player.empty?(valid_player_move, full_board)).to be false
+    end
+    it 'should return false for none WIN COMBOs' do
+      expect(player.win?(loss_board, player_token)).to be false
+    end
+    it 'should return true for any WIN COMBOs' do
+      expect(player.win?(win_board, player_token)).to be true
     end
   end
 end
