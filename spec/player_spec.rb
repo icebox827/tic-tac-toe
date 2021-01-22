@@ -6,6 +6,7 @@ describe PlayerMove do
   player_token = %w[X O].sample
   valid_player_move = [1, 2, 3, 4, 5, 6, 7, 8, 9].sample
   invalid_player_move = [0, 10].sample
+  string_player_move = %w[x c #].sample
 
   describe '#methods' do
     it 'should intantiate a class' do
@@ -20,8 +21,8 @@ describe PlayerMove do
     it 'should return false if player plays less than 1 or greater than 9' do
       expect(player.valid_number?(invalid_player_move)).to be false
     end
-    it 'should return true if player plays an integer' do
-      expect(player.valid_object?(valid_player_move)).to be true
+    it 'should return false if player plays any thing other than a number' do
+      expect(player.valid_object?(string_player_move)).to be false
     end
   end
 end
