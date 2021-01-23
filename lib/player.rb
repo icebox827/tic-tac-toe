@@ -1,20 +1,44 @@
 class PlayerMove
   def win?(board, player_token)
+    if win_horizontal?(board, player_token)
+      true
+    elsif win_vertical?(board, player_token)
+      true
+    elsif win_diagonal?(board, player_token)
+      true
+    else
+      false
+    end
+  end
+
+  def win_horizontal?(board, player_token)
     if board[1, 3].all? player_token
       true
     elsif board[4, 3].all? player_token
       true
     elsif board[7, 3].all? player_token
       true
+    else
+      false
+    end
+  end
+
+  def win_vertical?(board, player_token)
+    if [board[1], board[4], board[7]].all? player_token
+      true
     elsif [board[2], board[5], board[8]].all? player_token
       true
     elsif [board[3], board[6], board[9]].all? player_token
       true
-    elsif [board[1], board[5], board[9]].all? player_token
+    else
+      false
+    end
+  end
+
+  def win_diagonal?(board, player_token)
+    if [board[1], board[5], board[9]].all? player_token
       true
     elsif [board[3], board[5], board[7]].all? player_token
-      true
-    elsif [board[1], board[4], board[7]].all? player_token
       true
     else
       false
