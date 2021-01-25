@@ -8,4 +8,11 @@ describe Board do
       expect(board).to eq board
     end
   end
+
+  context '#empty_board' do
+    it 'Not create a new board' do
+      board = Board.new
+      expect(board).to_not eq Board.new
+    end
+  end
 end
