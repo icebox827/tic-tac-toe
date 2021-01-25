@@ -2,69 +2,71 @@
 require './../lib/player'
 
 describe PlayerMove do
-  let(:player_token) { PlayerMove.new(board, player_token) }
+  describe '#win' do
+    let(:player_token) { PlayerMove.new(board, player_token) }
 
-  context 'win?' do
-    let(:player_token) { [1, 3] }
+    context 'win?' do
+      let(:player_token) { [1, 3] }
 
-    it 'Tell if the player win' do
-      expect(player_token).to eq player_token
+      it 'Tell if the player win' do
+        expect(player_token).to eq player_token
+      end
     end
-  end
 
-  context 'win?' do
-    let(:player_token) { [4, 3] }
+    context 'win?' do
+      let(:player_token) { [4, 3] }
 
-    it 'Tell if the player win' do
-      expect(player_token).to eq player_token
+      it 'Tell if the player win' do
+        expect(player_token).to eq player_token
+      end
     end
-  end
 
-  context 'win?' do
-    let(:player_token) { [7, 3] }
+    context 'win?' do
+      let(:player_token) { [7, 3] }
 
-    it 'Tell if the player win' do
-      expect(player_token).to eq player_token
+      it 'Tell if the player win' do
+        expect(player_token).to eq player_token
+      end
     end
-  end
 
-  context 'win?' do
-    let(:player_token) { [[2], [5], [8]] }
+    context 'win?' do
+      let(:player_token) { [[2], [5], [8]] }
 
-    it 'Tell if the player win' do
-      expect(player_token).to eq player_token
+      it 'Tell if the player win' do
+        expect(player_token).to eq player_token
+      end
     end
-  end
 
-  context 'win?' do
-    let(:player_token) { [[3], [6], [9]] }
+    context 'win?' do
+      let(:player_token) { [[3], [6], [9]] }
 
-    it 'Tell if the player win' do
-      expect(player_token).to eq player_token
+      it 'Tell if the player win' do
+        expect(player_token).to eq player_token
+      end
     end
-  end
 
-  context 'win?' do
-    let(:player_token) { [[1], [5], [9]] }
+    context 'win?' do
+      let(:player_token) { [[1], [5], [9]] }
 
-    it 'Tell if the player win' do
-      expect(player_token).to eq player_token
+      it 'Tell if the player win' do
+        expect(player_token).to eq player_token
+      end
     end
-  end
 
-  context 'win?' do
-    let(:player_token) { [[3], [5], [7]] }
+    context 'win?' do
+      let(:player_token) { [[3], [5], [7]] }
 
-    it 'Tell if the player win' do
-      expect(player_token).to eq player_token
+      it 'Tell if the player win' do
+        expect(player_token).to eq player_token
+      end
     end
-  end
 
-  context 'win?' do
-    let(:player_token) { [[1], [4], [7]] }
+    context 'win?' do
+      let(:player_token) { [[1], [4], [7]] }
 
-    it 'Tell if the player win' do
-      expect(player_token).to eq player_token
+      it 'Tell if the player win' do
+        expect(player_token).to eq player_token
+      end
     end
   end
 end
