@@ -4,7 +4,7 @@ describe PlayerMove do
   player = PlayerMove.new
   board = [' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ']
   full_board = %w[X O O X X O O O X].sample
-  valid_player_move = [1, 2, 3, 4, 5, 6, 7, 8, 9].sample
+  valid_player_move = rand(1..9)
   invalid_player_move = [0, 10].sample
   string_player_move = %w[x c #].sample
   player_token = 'X'
