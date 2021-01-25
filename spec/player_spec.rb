@@ -2,9 +2,13 @@
 require './../lib/player'
 
 describe PlayerMove do
-  let(:board) { PlayerMove.new(board, player_token.to_s) }
+  let(:player_token) { PlayerMove.new(board, player_token) }
 
   context 'win?' do
-    let(:board) { player_token }
+    let(:player_token) { [1, 3] }
+
+    it 'Tell if the player win' do
+      expect(player_token).to eq player_token
+    end
   end
 end
