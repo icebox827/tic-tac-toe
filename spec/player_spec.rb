@@ -11,4 +11,12 @@ describe PlayerMove do
       expect(player_token).to eq player_token
     end
   end
+
+  context 'win?' do
+    let(:player_token) { [4, 3] }
+
+    it 'Tell if the player win' do
+      expect(player_token).to eq player_token
+    end
+  end
 end
