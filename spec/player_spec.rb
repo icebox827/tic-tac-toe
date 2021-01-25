@@ -1,5 +1,5 @@
-# spec/player_spec.rb
-require './../lib/player'
+# ./spec/player_spec.rb
+require './lib/player'
 
 describe PlayerMove do
   describe '#win' do

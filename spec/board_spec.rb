@@ -1,5 +1,5 @@
-# spec/board_spec.rb
-require './../lib/board'
+# ./pec/board_spec.rb
+require './lib/board'
 
 describe Board do
   context '#empty_board' do
