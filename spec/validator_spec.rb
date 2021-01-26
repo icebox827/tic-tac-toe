@@ -15,4 +15,11 @@ describe Validator do
       expect(user_input).to_not eq Validator.new
     end
   end
+
+  context '#valid_oject?' do
+    it 'Validate the object' do
+      user_input = rand(1..9)
+      expect(user_input).to be_instance_of Integer
+    end
+  end
 end
