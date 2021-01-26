@@ -1,4 +1,4 @@
-# ./pec/board_spec.rb
+# ./spec/board_spec.rb
 require './lib/board'
 
 describe Board do
