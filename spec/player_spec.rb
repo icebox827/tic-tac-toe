@@ -72,64 +72,64 @@ describe PlayerMove do
     context 'win?' do
       let(:player_token) { [1, 3] }
 
-      it 'Not tell if the player win' do
-        expect(player_token).to_not eq player_token
+      it 'Tell if the player do not win' do
+        expect(player_token).to_not eq PlayerMove.new
       end
     end
 
     context 'win?' do
       let(:player_token) { [4, 3] }
 
-      it 'Not tell if the player win' do
-        expect(player_token).to_not eq player_token
+      it 'Tell if the player do not win' do
+        expect(player_token).to_not eq PlayerMove.new
       end
     end
 
     context 'win?' do
       let(:player_token) { [7, 3] }
 
-      it 'Not tell if the player win' do
-        expect(player_token).to_not eq player_token
+      it 'Tell if the player do not win' do
+        expect(player_token).to_not eq PlayerMove.new
       end
     end
 
     context 'win?' do
       let(:player_token) { [[2], [5], [8]] }
 
-      it 'Not tell if the player win' do
-        expect(player_token).to_not eq player_token
+      it 'Tell if the player do not win' do
+        expect(player_token).to_not eq PlayerMove.new
       end
     end
 
     context 'win?' do
       let(:player_token) { [[3], [6], [9]] }
 
-      it 'Not tell if the player win' do
-        expect(player_token).to_not eq player_token
+      it 'Tell if the player do not win' do
+        expect(player_token).to_not eq PlayerMove.new
       end
     end
 
     context 'win?' do
       let(:player_token) { [[1], [5], [9]] }
 
-      it 'Not tell if the player win' do
-        expect(player_token).to_not eq player_token
+      it 'Tell if the player do not win' do
+        expect(player_token).to_not eq PlayerMove.new
       end
     end
 
     context 'win?' do
       let(:player_token) { [[3], [5], [7]] }
 
-      it 'Not tell if the player win' do
-        expect(player_token).to_not eq player_token
+      it 'Tell if the player do not win' do
+        expect(player_token).to_not eq PlayerMove.new
       end
     end
 
     context 'win?' do
       let(:player_token) { [[1], [4], [7]] }
 
-      it 'Not tell if the player win' do
-        expect(player_token).to_not eq player_token
+      it 'Tell if the player do not win' do
+        expect(player_token).to_not eq PlayerMove.new
       end
     end
   end
