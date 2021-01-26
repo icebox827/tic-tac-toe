@@ -1,5 +1,5 @@
 # ./spec/validator_spec.rb
-require './lib/Validator'
+require './lib/validator'
 
 describe Validator do
   context '#valid_number?' do
