@@ -16,10 +16,17 @@ describe Validator do
     end
   end
 
-  context '#valid_oject?' do
+  context '#valid_object?' do
     it 'Validate the object' do
-      user_input = rand(1..9)
+      user_input = rand(1..9).to_i
       expect(user_input).to be_instance_of Integer
+    end
+  end
+
+  context '#valid_object?' do
+    it 'To not validate the object' do
+      user_input = rand(1..9).to_i
+      expect(user_input).to_not eq Validator.new
     end
   end
 end
